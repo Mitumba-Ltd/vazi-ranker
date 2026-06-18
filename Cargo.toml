@@ -1,0 +1,22 @@
+[package]
+name = "vazi-ranker"
+version = "0.1.0"
+edition = "2021"
+description = "VAZI outfit ranking engine — scores and sorts outfit candidates"
+license = "MIT"
+repository = "https://github.com/Mitumba-Ltd/vazi-ranker"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3"
+
+[profile.release]
+opt-level = "s"
+lto = true
