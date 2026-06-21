@@ -29,6 +29,7 @@ pub struct UserContext {
 #[derive(Debug, Deserialize)]
 pub struct RankWeights {
     pub engagement_weight: f32,
+    pub conversion_weight: f32,
     pub freshness_weight: f32,
     pub sti_weight: f32,
     pub price_coherence_weight: f32,
@@ -41,13 +42,14 @@ pub struct RankWeights {
 impl Default for RankWeights {
     fn default() -> Self {
         Self {
-            engagement_weight: 0.30,
+            engagement_weight: 0.25,
+            conversion_weight: 0.20,
             freshness_weight: 0.20,
             sti_weight: 0.15,
             price_coherence_weight: 0.10,
             color_harmony_weight: 0.10,
-            video_boost: 0.20,
-            diversity_penalty: 0.05,
+            video_boost: 0.15,
+            diversity_penalty: 0.15,
             cold_start_boost: 0.15,
         }
     }
